@@ -1,6 +1,7 @@
 !define TEST_SYSTEM {slim}
 !define TEST_RUNNER {../treadmill/treadmill_acceptance_tests}
 !define COMMAND_PATTERN {%m}
+!define SLIM_VERSION {0.0}
 
 
 !contents -R2 -g -p -f -h

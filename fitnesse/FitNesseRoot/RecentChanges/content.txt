@@ -1,2 +1,3 @@
-|TreadmillControlSuite||22:20:47 Thu, Jul 28, 2011|
+|TreadmillControlSuite.TestIncrementSpeed||16:56:56 Fri, Jul 29, 2011|
+|TreadmillControlSuite||16:36:49 Fri, Jul 29, 2011|
 |FrontPage||22:20:02 Thu, Jul 28, 2011|

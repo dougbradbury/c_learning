@@ -14,6 +14,7 @@ ACCEPTANCE_TEST_TARGET = \
 
 RANLIB = ranlib
 #--- Inputs ----#
+CPPUTEST_USE_MEM_LEAK_DETECTION = N
 PROJECT_HOME_DIR = .
 ifeq "$(CPPUTEST_HOME)" ""
     CPPUTEST_HOME = ../CppUTest
@@ -26,7 +27,7 @@ CPP_PLATFORM = Gcc
 #CFLAGS are set to override malloc and free to get memory leak detection in C programs
 CPPUTEST_CFLAGS += -std=c99
 #GCOVFLAGS = -fprofile-arcs -ftest-coverage
-
+CPPUTEST_WARNINGFLAGS =  -Wall# -Wextra -Werror -Wshadow -Wswitch-default -Wswitch-enum -Wconversion
 #includes for all compiles
 #a list of -I's are created from these directories
 

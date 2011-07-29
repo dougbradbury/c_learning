@@ -19,7 +19,7 @@ int connection_handler(int socket)
 	return result;
 }
 
-int main(int , char** av)
+int main(int arg, char** av)
 {
   slim = Slim_Create();
 	SocketServer* server = SocketServer_Create();
@@ -31,4 +31,10 @@ int main(int , char** av)
   Slim_Destroy(slim);
 	return result;
 }
+
+#include "Fixtures.h"
+
+SLIM_FIXTURES
+  SLIM_FIXTURE(Treadmill)
+SLIM_END
 
