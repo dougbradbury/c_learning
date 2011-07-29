@@ -1,0 +1,17 @@
+Walking at 1.0mph burns an additional 70 kCal / hour
+Walking at 2.0mph burns an additional 150 kCal / hour
+Walking at 3.0mph burns an additional 220 kCal / hour
+
+!|Calories Burned|
+|time|speed|calories?|
+|60|1.0|70|
+|60|2.0|150|
+|60|3.0|220|
+
+
+!|Cumulative Calories Burned|
+|time|speed|calories?|
+|60|1.0|70|
+|60|2.0|150|
+|60|3.0|220|
+

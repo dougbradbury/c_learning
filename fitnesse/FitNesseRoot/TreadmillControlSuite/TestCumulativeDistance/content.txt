@@ -1,0 +1,10 @@
+|script|treadmill|
+|given treadmill speed|1.0|
+|walk for|30|minutes|
+|check|distance|0.5|
+
+!|Treadmill Distance|
+|speed|time|distance?|
+|1.0|30|0.5|
+|2.0|30|1.5|
+|1.5|60|3.0|

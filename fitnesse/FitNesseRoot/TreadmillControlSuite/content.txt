@@ -1,0 +1,6 @@
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER {../treadmill/treadmill_acceptance_test}
+!define COMMAND_PATTERN {%m}
+
+
+!contents -R2 -g -p -f -h
