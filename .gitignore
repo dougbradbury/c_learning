@@ -1,3 +1,6 @@
 *.o
+*.d
 *.a
+CppUTest_tests
 *.zip
+Treadmill_tests
