@@ -9,10 +9,16 @@ TARGET_LIB = \
 TEST_TARGET = \
 	$(COMPONENT_NAME)_tests
 
+ACCEPTANCE_TEST_TARGET = \
+	$(COMPONENT_NAME)_acceptance_tests
+
 #--- Inputs ----#
 PROJECT_HOME_DIR = .
 ifeq "$(CPPUTEST_HOME)" ""
     CPPUTEST_HOME = ../CppUTest
+endif
+ifeq "$(CSLIM_HOME)" ""
+    CSLIM_HOME = ../CSlim
 endif
 CPP_PLATFORM = Gcc
 
@@ -29,6 +35,7 @@ INCLUDE_DIRS =\
   include\
   include/*\
   $(CPPUTEST_HOME)/include/
+	$(CSLIM_HOME)/include/
 
 #SRC_DIRS is a list of source directories that make up the target library
 #If test files are in these directories, their IMPORT_TEST_GROUPs need
@@ -52,6 +59,8 @@ MOCKS_SRC_DIRS = \
 	mocks
 	
 
+FIXTURE_SRC_DIRS = \
+	fixtures
 
 #Flags to pass to ld
 LDFLAGS +=

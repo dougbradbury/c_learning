@@ -1,5 +1,5 @@
 !define TEST_SYSTEM {slim}
-!define TEST_RUNNER {../treadmill/treadmill_acceptance_test}
+!define TEST_RUNNER {../treadmill/treadmill_acceptance_tests}
 !define COMMAND_PATTERN {%m}
 
 
