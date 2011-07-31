@@ -1,1 +1,2 @@
-export PATH=$PATH:CppUTest/script
+export PATH=$PATH:`pwd`/CppUTest/scripts
+export CPPUTEST_HOME=`pwd`/CppUTest
