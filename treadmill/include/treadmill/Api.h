@@ -14,5 +14,7 @@ void Api_Destroy(Api);
 double Api_GetTargetSpeed(Api);
 void Api_SetTargetSpeed(Api, double);
 void Api_IncrementTargetSpeed(Api);
+void Api_DecrementTargetSpeed(Api);
+void Api_SetMaximumSpeed(Api, double);
 
 #endif  /* D_FakeApi_H */

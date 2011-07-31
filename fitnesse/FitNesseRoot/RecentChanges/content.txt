@@ -1,3 +1,5 @@
+|TreadmillControlSuite.TestMaxSpeed||23:49:40 Sat, Jul 30, 2011|
+|TreadmillControlSuite.TestDecrementSpeed||22:18:06 Sat, Jul 30, 2011|
 |TreadmillControlSuite.TestIncrementSpeed||16:56:56 Fri, Jul 29, 2011|
 |TreadmillControlSuite||16:36:49 Fri, Jul 29, 2011|
 |FrontPage||22:20:02 Thu, Jul 28, 2011|

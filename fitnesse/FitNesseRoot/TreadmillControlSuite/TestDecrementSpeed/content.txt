@@ -1,4 +1,4 @@
-|script|treadmill|
+|script|Treadmill|
 |given treadmill speed|1.0|
 |decrement speed|
-|check|target_speed|0.9|
+|check|target speed|0.9|
