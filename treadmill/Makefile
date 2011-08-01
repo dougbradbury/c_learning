@@ -37,7 +37,8 @@ INCLUDE_DIRS =\
   include/*\
   $(CPPUTEST_HOME)/include/\
 	$(CSLIM_HOME)/include/Com\
-	$(CSLIM_HOME)/include/CSlim
+	$(CSLIM_HOME)/include/CSlim\
+	tests
 
 #SRC_DIRS is a list of source directories that make up the target library
 #If test files are in these directories, their IMPORT_TEST_GROUPs need

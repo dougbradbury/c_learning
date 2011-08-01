@@ -47,3 +47,8 @@ void Api_SetMaximumSpeed(Api self, double speed)
 {
   self->maxSpeed = speed;
 }
+
+double Api_DistanceTravelled(Api self)
+{
+  return 0.0;
+}

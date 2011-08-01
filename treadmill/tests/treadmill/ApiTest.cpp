@@ -1,6 +1,7 @@
 extern "C"
 {
 #include "Api.h"
+#include "util/FakeUptime.h"
 }
 
 #include "CppUTest/TestHarness.h"
@@ -12,18 +13,25 @@ TEST_GROUP(Api)
 	void setup()
 	{
 		api = Api_Create();
+    Uptime_Create();
 	}
 
 	void teardown()
 	{
 		Api_Destroy(api);
+    Uptime_Destroy();
   }
+
   void SpeedIs(double speed)
   {
     DOUBLES_EQUAL(Api_GetTargetSpeed(api), speed, 0.01);
   }
-};
 
+  long Hours(double hours)
+  {
+    return hours*60*60*1000;
+  }
+};
 
 TEST(Api, ItStatsAtZeroSpeed)
 {
@@ -56,4 +64,11 @@ TEST(Api, itHasMaxSpeed)
   Api_SetMaximumSpeed(api, 3.0);
   Api_IncrementTargetSpeed(api);
   SpeedIs(3.0);
+}
+
+TEST(Api, itTracksDistanceTraveled)
+{
+  Api_SetTargetSpeed(api, 1.0);
+  uptimeMillis = Hours(1);
+  DOUBLES_EQUAL(1.0, Api_DistanceTravelled(api), 0.01);
 }
