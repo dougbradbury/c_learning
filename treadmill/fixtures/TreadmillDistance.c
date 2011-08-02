@@ -57,4 +57,5 @@ SLIM_CREATE_FIXTURE(TreadmillDistance)
 	SLIM_FUNCTION(setSpeed)
 	SLIM_FUNCTION(setTime)
 	SLIM_FUNCTION(distance)
+  SLIM_FUNCTION(reset)
 SLIM_END
