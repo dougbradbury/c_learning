@@ -17,4 +17,5 @@ void Api_IncrementTargetSpeed(Api);
 void Api_DecrementTargetSpeed(Api);
 void Api_SetMaximumSpeed(Api, double);
 double Api_DistanceTravelled(Api);
+void Api_Reset(Api);
 #endif  /* D_FakeApi_H */

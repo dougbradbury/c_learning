@@ -1,5 +1,5 @@
 #Set this to @ to keep the makefile quiet
-SILENCE = @
+#SILENCE = @
 
 #---- Outputs ----#
 COMPONENT_NAME = Treadmill
@@ -59,7 +59,8 @@ TEST_SRC_DIRS = \
 
 # - OBJ files in these directories are included in the TEST_TARGET
 MOCKS_SRC_DIRS = \
-	mocks
+	mocks\
+	mocks/util
 
 
 FIXTURE_SRC_DIRS = \

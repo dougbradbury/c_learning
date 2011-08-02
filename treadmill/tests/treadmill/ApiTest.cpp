@@ -72,3 +72,20 @@ TEST(Api, itTracksDistanceTraveled)
   uptimeMillis = Hours(1);
   DOUBLES_EQUAL(1.0, Api_DistanceTravelled(api), 0.01);
 }
+
+TEST(Api, itTrackDistanceTraveledWithSpeedChanges)
+{
+  Api_SetTargetSpeed(api, 1.0);
+  uptimeMillis = Hours(1);
+  Api_SetTargetSpeed(api, 2.0);
+  uptimeMillis = Hours(2);
+  DOUBLES_EQUAL(3.0, Api_DistanceTravelled(api), 0.01);
+}
+
+TEST(Api, itResetsDistanceTraveled)
+{
+  Api_SetTargetSpeed(api, 1.0);
+  uptimeMillis = Hours(1);
+  Api_Reset(api);
+  DOUBLES_EQUAL(0.0, Api_DistanceTravelled(api), 0.01);
+}

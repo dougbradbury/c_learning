@@ -26,7 +26,8 @@ void Treadmill_Destroy(void* void_self)
 	free(self);
 }
 
-static char* givenTreadmillSpeed(void* void_self, SlimList* args) {
+static char* givenTreadmillSpeed(void* void_self, SlimList* args)
+{
 	Treadmill* self = (Treadmill*)void_self;
   char* speed_s = SlimList_GetStringAt(args, 0);
   double speed = atof(speed_s);
@@ -34,25 +35,29 @@ static char* givenTreadmillSpeed(void* void_self, SlimList* args) {
 	return "";
 }
 
-static char* incrementSpeed(void* void_self, SlimList* args) {
+static char* incrementSpeed(void* void_self, SlimList* args)
+{
 	Treadmill* self = (Treadmill*)void_self;
   Api_IncrementTargetSpeed(self->api);
 	return "";
 }
 
-static char* targetSpeed(void* void_self, SlimList* args) {
+static char* targetSpeed(void* void_self, SlimList* args)
+{
 	Treadmill* self = (Treadmill*)void_self;
 	snprintf(self->result, 32, "%.1f", Api_GetTargetSpeed(self->api));
 	return self->result;
 }
 
-static char* decrementSpeed(void* void_self, SlimList* args) {
+static char* decrementSpeed(void* void_self, SlimList* args)
+{
 	Treadmill* self = (Treadmill*)void_self;
   Api_DecrementTargetSpeed(self->api);
   return "";
 }
 
-static char* givenMaxSpeed(void* void_self, SlimList* args) {
+static char* givenMaxSpeed(void* void_self, SlimList* args)
+{
 	Treadmill* self = (Treadmill*)void_self;
   char* speed_s = SlimList_GetStringAt(args, 0);
   double speed = atof(speed_s);
