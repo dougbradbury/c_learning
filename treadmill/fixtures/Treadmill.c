@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "Fixtures.h"
 #include "SlimList.h"
-#include "treadmill/api.h"
+#include "treadmill/Api.h"
 
 typedef struct Treadmill
 {

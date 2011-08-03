@@ -20,7 +20,7 @@ ifeq "$(CPPUTEST_HOME)" ""
     CPPUTEST_HOME = ../CppUTest
 endif
 ifeq "$(CSLIM_HOME)" ""
-    CSLIM_HOME = ../CSlim
+    CSLIM_HOME = ../cslim
 endif
 CPP_PLATFORM = Gcc
 
@@ -74,7 +74,7 @@ CSLIM_SRC_DIRS = \
 
 #Flags to pass to ld
 LDFLAGS +=
-LD_LIBRARIES += -lstdc++
+#LD_LIBRARIES += -lstdc++
 
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 
@@ -85,8 +85,8 @@ STUFF_TO_CLEAN += $(CSLIM_OBJS)
 FIXTURE_TEST_SRC = $(call get_src_from_dir_list, $(FIXTURE_SRC_DIRS))
 FIXTURE_OBJS = $(call src_to_o,$(FIXTURE_TEST_SRC))
 STUFF_TO_CLEAN += $(FIXTURE_OBJS)
-
-$(ACCEPTANCE_TEST_TARGET) : $(MOCKS_OBJS) $(FIXTURE_OBJS) $(CSLIM_OBJS) $(PRODUCTION_CODE_START) $(TARGET_LIB) $(USER_LIBS) $(PRODUCTION_CODE_END) $(STDLIB_CODE_START) 
+CSLIM_LIB = ../cslim/lib/libCSlim.a
+$(ACCEPTANCE_TEST_TARGET) : $(MOCKS_OBJS) $(FIXTURE_OBJS) $(CSLIM_LIB) $(PRODUCTION_CODE_START) $(TARGET_LIB) $(USER_LIBS) $(PRODUCTION_CODE_END) $(STDLIB_CODE_START) 
 	$(SILENCE)echo Linking $@
 	$(SILENCE)$(LINK.o) -o $@ $^ $(LD_LIBRARIES)
 
