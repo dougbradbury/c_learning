@@ -89,3 +89,4 @@ TEST(Api, itResetsDistanceTraveled)
   Api_Reset(api);
   DOUBLES_EQUAL(0.0, Api_DistanceTravelled(api), 0.01);
 }
+
