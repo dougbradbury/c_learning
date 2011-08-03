@@ -1,28 +1,32 @@
 #include "Api.h"
 #include <stdlib.h>
 #include <memory.h>
-#include "util/uptime.h"
+#include "util/Uptime.h"
+#include "hardware/Pwm.h"
 
 typedef struct ApiStruct
 {
-    double targetSpeed;
-    double maxSpeed;
-    double distanceTraveled;
-    long lastTimeChange;
+  double targetSpeed;
+  double maxSpeed;
+  double distanceTraveled;
+  long lastTimeChange;
 } ApiStruct;
 
 Api Api_Create(void)
 {
-     Api self = calloc(1, sizeof(ApiStruct));
-     self->maxSpeed = 10.0;
-     Uptime_Create();
-     return self;
+  Api self = calloc(1, sizeof(ApiStruct));
+  self->maxSpeed = 10.0;
+  Uptime_Create();
+  Pwm_Create();
+  Pwm_SetPeriod(50000);
+  return self;
 }
 
 void Api_Destroy(Api self)
 {
-    Uptime_Destroy();
-    free(self);
+  Pwm_Destroy();
+  Uptime_Destroy();
+  free(self);
 }
 
 double Api_GetTargetSpeed(Api self)
@@ -41,11 +45,18 @@ static double distanceSinceLastSpeedChange(Api self)
   return distance(self->targetSpeed, uptime - self->lastTimeChange);
 }
 
+double dutyCycleFromSpeed(double mph)
+{
+   return 0.067 * mph + 0.175;
+}
+
 void Api_SetTargetSpeed(Api self, double speed)
 {
   self->distanceTraveled += distanceSinceLastSpeedChange(self);
   self->lastTimeChange = Uptime_MilliSeconds();
   self->targetSpeed = speed;
+  Pwm_SetDutyCycle(dutyCycleFromSpeed(speed));
+  Pwm_Start();
 }
 
 void Api_IncrementTargetSpeed(Api self)

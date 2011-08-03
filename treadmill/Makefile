@@ -46,7 +46,8 @@ INCLUDE_DIRS =\
 #put them into an AllTests.h file in each directory
 SRC_DIRS = \
 	src\
-	src/*
+	src/treadmill\
+	src/util
 
 #TEST_SRC_DIRS is a list of directories including
 # - A test main (AllTests.cpp by convention)
@@ -60,7 +61,8 @@ TEST_SRC_DIRS = \
 # - OBJ files in these directories are included in the TEST_TARGET
 MOCKS_SRC_DIRS = \
 	mocks\
-	mocks/util
+	mocks/util\
+	mocks/hardware
 
 
 FIXTURE_SRC_DIRS = \

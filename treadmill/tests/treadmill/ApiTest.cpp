@@ -2,6 +2,7 @@ extern "C"
 {
 #include "Api.h"
 #include "util/FakeUptime.h"
+#include "hardware/FakePwm.h"
 }
 
 #include "CppUTest/TestHarness.h"
@@ -90,3 +91,11 @@ TEST(Api, itResetsDistanceTraveled)
   DOUBLES_EQUAL(0.0, Api_DistanceTravelled(api), 0.01);
 }
 
+TEST(Api, itSetsPwm)
+{
+  Api_SetTargetSpeed(api, 1.0);
+  CHECK(FakePwm_isRunning);
+  LONGS_EQUAL(FakePwm_period, 50000);
+  DOUBLES_EQUAL(FakePwm_dutyCycle, 0.242, 0.001);
+
+}
