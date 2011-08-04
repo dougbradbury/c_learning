@@ -1,0 +1,6 @@
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER {../cslim/CSlim_cslim}
+!define COMMAND_PATTERN {%m}
+!define SLIM_VERSION {0.0}
+
+!contents -R2 -g -p -f -h

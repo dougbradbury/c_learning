@@ -1,0 +1,5 @@
+!|Treadmill Distance|
+|speed|time|distance?|
+|1.0|30|0.5|
+|2.0|30|1.0|
+|1.5|60|1.5|
