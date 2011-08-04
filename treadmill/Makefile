@@ -64,13 +64,13 @@ MOCKS_SRC_DIRS = \
 	mocks/util\
 	mocks/hardware
 
-
 FIXTURE_SRC_DIRS = \
 	fixtures
 
-CSLIM_SRC_DIRS = \
-  $(CSLIM_HOME)/src/CSlim/\
-	$(CSLIM_HOME)/src/Com
+FIXTURE_CHEAT_DIRS = \
+	cheat_fixtures
+
+CSLIM_LIB = ../cslim/lib/libCSlim.a
 
 #Flags to pass to ld
 LDFLAGS +=
@@ -78,16 +78,23 @@ LDFLAGS +=
 
 include $(CPPUTEST_HOME)/build/MakefileWorker.mk
 
-CSLIM_TEST_SRC = $(call get_src_from_dir_list, $(CSLIM_SRC_DIRS))
-CSLIM_OBJS = $(call src_to_o,$(CSLIM_TEST_SRC))
-STUFF_TO_CLEAN += $(CSLIM_OBJS)
+FIXTURE_CHEAT_SRC =  $(call get_src_from_dir_list, $(FIXTURE_CHEAT_DIRS))
+FIXTURE_CHEAT_OBJS = $(call src_to_o,$(FIXTURE_CHEAT_SRC))
+STUFF_TO_CLEAN += $(FIXTURE_CHEAT_OBJS)
+
+$(ACCEPTANCE_TEST_TARGET)_cheat : $(MOCKS_OBJS) $(FIXTURE_CHEAT_OBJS) $(CSLIM_LIB) $(PRODUCTION_CODE_START) $(TARGET_LIB) $(USER_LIBS) $(PRODUCTION_CODE_END) $(STDLIB_CODE_START) 
+	$(SILENCE)echo Linking $@
+	$(SILENCE)$(LINK.o) -o $@ $^ $(LD_LIBRARIES)
+
+cheat: $(ACCEPTANCE_TEST_TARGET)_cheat
 
 FIXTURE_TEST_SRC = $(call get_src_from_dir_list, $(FIXTURE_SRC_DIRS))
 FIXTURE_OBJS = $(call src_to_o,$(FIXTURE_TEST_SRC))
 STUFF_TO_CLEAN += $(FIXTURE_OBJS)
-CSLIM_LIB = ../cslim/lib/libCSlim.a
+
 $(ACCEPTANCE_TEST_TARGET) : $(MOCKS_OBJS) $(FIXTURE_OBJS) $(CSLIM_LIB) $(PRODUCTION_CODE_START) $(TARGET_LIB) $(USER_LIBS) $(PRODUCTION_CODE_END) $(STDLIB_CODE_START) 
 	$(SILENCE)echo Linking $@
 	$(SILENCE)$(LINK.o) -o $@ $^ $(LD_LIBRARIES)
 
 at: $(ACCEPTANCE_TEST_TARGET)
+

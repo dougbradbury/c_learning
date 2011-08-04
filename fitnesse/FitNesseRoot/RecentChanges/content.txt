@@ -1,3 +1,5 @@
+|CheatSuite.TreadmillControlSuite||08:45:40 Thu, Aug 04, 2011|
+|TreadmillControlSuite||08:44:53 Thu, Aug 04, 2011|
 |CheatSuite||23:36:17 Wed, Aug 03, 2011|
 |FrontPage||23:36:13 Wed, Aug 03, 2011|
 |TreadmillControlSuite.TestTotalDistance||21:37:29 Wed, Aug 03, 2011|
@@ -6,7 +8,6 @@
 |FitNesseTutorial.TestDivision||21:22:51 Wed, Aug 03, 2011|
 |FitNesseTutorial||21:04:30 Wed, Aug 03, 2011|
 |ThisIsAnWikiWord||20:57:27 Wed, Aug 03, 2011|
-|TreadmillControlSuite||16:40:16 Wed, Aug 03, 2011|
 |ErrorLogs.TreadmillControlSuite||16:40:02 Wed, Aug 03, 2011|
 |TreadmillControlSuite.TestMaxSpeed||23:49:40 Sat, Jul 30, 2011|
 |TreadmillControlSuite.TestDecrementSpeed||22:18:06 Sat, Jul 30, 2011|
