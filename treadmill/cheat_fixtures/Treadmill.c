@@ -29,8 +29,7 @@ void Treadmill_Destroy(void* void_self)
 static char* givenTreadmillSpeed(void* void_self, SlimList* args)
 {
 	Treadmill* self = (Treadmill*)void_self;
-  char* speed_s = SlimList_GetStringAt(args, 0);
-  double speed = atof(speed_s);
+  double speed = SlimList_GetDoubleAt(args, 0);
   Api_SetTargetSpeed(self->api, speed);
 	return "";
 }
@@ -59,9 +58,9 @@ static char* decrementSpeed(void* void_self, SlimList* args)
 static char* givenMaxSpeed(void* void_self, SlimList* args)
 {
 	Treadmill* self = (Treadmill*)void_self;
-  char* speed_s = SlimList_GetStringAt(args, 0);
-  double speed = atof(speed_s);
+  double speed = SlimList_GetDoubleAt(args, 0);  
   Api_SetMaximumSpeed(self->api, speed);
+  return "";
 }
 
 SLIM_CREATE_FIXTURE(Treadmill)

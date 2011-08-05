@@ -4,7 +4,7 @@
 #include "Fixtures.h"
 #include "SlimList.h"
 #include "treadmill/Api.h"
-#include "util/FakeUptime.h"
+#include "FakeUptime.h"
 
 typedef struct TreadmillDistance
 {

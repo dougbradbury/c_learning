@@ -4,7 +4,7 @@
 #include "Fixtures.h"
 #include "SlimList.h"
 #include "treadmill/Api.h"
-#include "util/FakeUptime.h"
+#include "hardware/FakeUptime.h"
 
 typedef struct TreadmillCumulativeDistance
 {
@@ -55,6 +55,7 @@ static char* distance(void* void_self, SlimList *args) {
 	snprintf(self->result, 32, "%0.1f", d);
 	return self->result;
 }
+
 SLIM_CREATE_FIXTURE(TreadmillCumulativeDistance)
 	SLIM_FUNCTION(setSpeed)
 	SLIM_FUNCTION(setTime)

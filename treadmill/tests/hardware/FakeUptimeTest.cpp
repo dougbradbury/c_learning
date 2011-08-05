@@ -1,6 +1,6 @@
 extern "C"
 {
-#include "util/FakeUptime.h"
+#include "hardware/FakeUptime.h"
 }
 
 //CppUTest includes should be after your and system includes

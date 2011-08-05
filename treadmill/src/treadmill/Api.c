@@ -1,7 +1,7 @@
 #include "Api.h"
 #include <stdlib.h>
 #include <memory.h>
-#include "util/Uptime.h"
+#include "Uptime.h"
 #include "hardware/Pwm.h"
 
 typedef struct ApiStruct

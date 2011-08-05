@@ -11,4 +11,4 @@
 void Uptime_Create(void);
 void Uptime_Destroy(void);
 long Uptime_MilliSeconds(void);
-#endif  /* D_FakeUptime_H */
+#endif  /* D_Uptime_H */
