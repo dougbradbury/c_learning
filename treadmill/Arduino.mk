@@ -223,8 +223,8 @@ OBJDIR  	  = build-cli
 #
 LOCAL_C_SRCS    += $(wildcard *.c)
 LOCAL_CPP_SRCS  += $(wildcard *.cpp)
-LOCAL_CC_SRCS   = $(wildcard *.cc)
-LOCAL_PDE_SRCS  = $(wildcard *.pde)
+LOCAL_CC_SRCS   += $(wildcard *.cc)
+LOCAL_PDE_SRCS  += $(wildcard *.pde)
 LOCAL_AS_SRCS   = $(wildcard *.S)
 LOCAL_OBJ_FILES = $(LOCAL_C_SRCS:.c=.o) $(LOCAL_CPP_SRCS:.cpp=.o) \
 		$(LOCAL_CC_SRCS:.cc=.o) $(LOCAL_PDE_SRCS:.pde=.o) \
@@ -245,9 +245,14 @@ CORE_OBJS       = $(patsubst $(ARDUINO_CORE_PATH)/%,  \
 endif
 endif
 
-# all the objects!
-OBJS            = $(LOCAL_OBJS) $(CORE_OBJS) $(LIB_OBJS)
+CSLIM_SRC = $(wildcard $(CSLIM_HOME)/src/CSlim/*.c)
+CSLIM_CPP_SRCS = $(CSLIM_HOME)/src/ComArduino/SerialComLink.cpp $(CSLIM_HOME)/src/ComArduino/TcpComLink.cpp
+CSLIM_OBJ_FILES  = $(CSLIM_SRC:.c=.o) $(CSLIM_CPP_SRCS:.cpp=.o)
+CSLIM_OBJS       = $(patsubst $(CSLIM_SRC)/%,  \
+			$(OBJDIR)/cslim/%,$(CSLIM_OBJ_FILES))
 
+# all the objects!
+OBJS            = $(LOCAL_OBJS) $(CORE_OBJS) $(LIB_OBJS) $(CSLIM_OBJS)
 ########################################################################
 # Rules for making stuff
 #
@@ -406,6 +411,9 @@ $(OBJDIR):
 		mkdir $(OBJDIR)
 
 $(TARGET_ELF): 	$(OBJS)
+	@echo "**************"
+	@echo $(CSLIM_SRC)
+	@echo "**************"
 		$(CC) $(LDFLAGS) -o $@ $(OBJS) $(SYS_OBJS) -lc
 
 $(DEP_FILE):	$(OBJDIR) $(DEPS)

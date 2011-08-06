@@ -1,6 +1,5 @@
 #include "Api.h"
 #include <stdlib.h>
-#include <memory.h>
 #include "Uptime.h"
 #include "hardware/Pwm.h"
 

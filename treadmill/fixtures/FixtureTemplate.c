@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <memory.h>
 #include <stdio.h>
 #include "Fixtures.h"
 #include "SlimList.h"

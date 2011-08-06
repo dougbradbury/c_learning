@@ -11,3 +11,4 @@ treadmill/Treadmill_acceptance_tests_cheat
 Treadmill_tests.txt
 tags
 *.key
+treadmill/build-cli/
