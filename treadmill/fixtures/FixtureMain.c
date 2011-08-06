@@ -35,7 +35,6 @@ int main(int arg, char** av)
 #include "Fixtures.h"
 
 SLIM_FIXTURES
-  SLIM_FIXTURE(TreadmillCumulativeDistance)
-  SLIM_FIXTURE(Treadmill) 
+  SLIM_FIXTURE(ExampleFixture)
 SLIM_END
 
