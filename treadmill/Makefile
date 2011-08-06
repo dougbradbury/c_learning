@@ -65,7 +65,8 @@ MOCKS_SRC_DIRS = \
 	mocks/hardware
 
 FIXTURE_SRC_DIRS = \
-	fixtures
+	fixtures\
+	src/main/at
 
 FIXTURE_CHEAT_DIRS = \
 	cheat_fixtures

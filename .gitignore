@@ -7,6 +7,7 @@ Treadmill_tests
 fitnesse/FitNesseRoot/ErrorLogs/
 fitnesse/FitNesseRoot/files/testResults/
 treadmill/Treadmill_acceptance_tests
+treadmill/Treadmill_acceptance_tests_cheat
 Treadmill_tests.txt
 tags
 *.key
