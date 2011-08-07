@@ -1,0 +1,5 @@
+!|script|Treadmill|
+|given max speed|3.0|
+|given treadmill speed|3.0|
+|increment speed|
+|check|target speed|3.0|

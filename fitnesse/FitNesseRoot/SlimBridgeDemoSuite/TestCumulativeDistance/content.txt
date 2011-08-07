@@ -1,0 +1,5 @@
+!|Treadmill Cumulative Distance|
+|speed|time|distance?|
+|1.0|30|0.5|
+|2.0|30|1.5|
+|1.5|60|3.0|

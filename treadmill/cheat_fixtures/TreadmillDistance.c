@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include <memory.h>
 #include <stdio.h>
+#include <string.h>
 #include "Fixtures.h"
 #include "SlimList.h"
 #include "treadmill/Api.h"

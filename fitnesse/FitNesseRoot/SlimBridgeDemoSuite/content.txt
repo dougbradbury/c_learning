@@ -1,0 +1,10 @@
+!define TEST_SYSTEM {slim}
+!define TEST_RUNNER {../slim_bridge/lib/run_serial_slim_bridge.rb}
+!define SERIAL_DEVICE {/dev/tty.usbmodem411}
+!define BAUD {9600}
+!define PATH_SEPARATOR { -I }
+!path ../slim_bridge/lib
+!define COMMAND_PATTERN {ruby -rrubygems -Ku -I %p %m ${SERIAL_DEVICE} ${BAUD}}
+!define SLIM_VERSION {0.0}
+
+!contents -R2 -g -p -f -h

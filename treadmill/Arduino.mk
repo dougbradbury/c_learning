@@ -411,9 +411,6 @@ $(OBJDIR):
 		mkdir $(OBJDIR)
 
 $(TARGET_ELF): 	$(OBJS)
-	@echo "**************"
-	@echo $(CSLIM_SRC)
-	@echo "**************"
 		$(CC) $(LDFLAGS) -o $@ $(OBJS) $(SYS_OBJS) -lc
 
 $(DEP_FILE):	$(OBJDIR) $(DEPS)

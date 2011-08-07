@@ -1,3 +1,6 @@
 [submodule "cslim"]
 	path = cslim
 	url = git://github.com/dougbradbury/cslim.git
+[submodule "slim_bridge"]
+	path = slim_bridge
+	url = git@github.com:dougbradbury/slim_bridge.git

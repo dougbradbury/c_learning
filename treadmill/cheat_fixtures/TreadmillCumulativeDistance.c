@@ -1,10 +1,10 @@
 #include <stdlib.h>
-#include <memory.h>
 #include <stdio.h>
+#include <string.h>
 #include "Fixtures.h"
 #include "SlimList.h"
 #include "treadmill/Api.h"
-#include "hardware/FakeUptime.h"
+#include "FakeUptime.h"
 
 typedef struct TreadmillCumulativeDistance
 {

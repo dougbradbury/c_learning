@@ -47,6 +47,7 @@ INCLUDE_DIRS =\
 SRC_DIRS = \
 	src\
 	src/treadmill\
+	src/main/at\
 	src/util
 
 #TEST_SRC_DIRS is a list of directories including
@@ -65,8 +66,7 @@ MOCKS_SRC_DIRS = \
 	mocks/hardware
 
 FIXTURE_SRC_DIRS = \
-	fixtures\
-	src/main/at
+	fixtures
 
 FIXTURE_CHEAT_DIRS = \
 	cheat_fixtures

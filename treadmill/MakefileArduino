@@ -1,6 +1,6 @@
 get_src_from_dir  = $(wildcard $1/*.cpp) $(wildcard $1/*.c)
 get_dirs_from_dirspec  = $(wildcard $1)
-get_src_from_dir_list = $(foreach dir, $1, $(call get_src_from_dir,$(dir)))				        
+get_src_from_dir_list = $(foreach dir, $1, $(call get_src_from_dir,$(dir)))
 src_to_o = $(subst .c,.o, $(subst .cpp,.o,$1))
 src_to_d = $(subst .c,.d, $(subst .cpp,.d,$1))
 change_o_file_location = $(patsubst %.o,$(OBJS_DIR)/%.o, $1)
@@ -11,20 +11,21 @@ ARDUINO_DIR = /Applications/Arduino.app/Contents/Resources/Java
 
 TARGET       = Treadmill
 BOARD_TAG    = mega2560
-ARDUINO_PORT = /dev/tty.usbmodem621
+ARDUINO_PORT = /dev/tty.usbmodem411
 ARDUINO_LIBS = Ethernet Spi Ethernet/utility
 
 CSLIM_HOME = ../cslim
 
 SRC_DIRS = \
 	src/treadmill\
+	cheat_fixtures\
+	mocks/hardware
 
-FIXTURE_C_SRC =$(call get_src_from_dir_list, fixtures)
 TREADMILL_SRC = $(call get_src_from_dir_list, $(SRC_DIRS))
 CPP_COMPILING = 1
 CPPFLAGS += -I$(CSLIM_HOME)/include/CSlim -I$(CSLIM_HOME)/include/ComArduino -Iinclude/treadmill \
-						-Iinclude/hardware -Iinclude
-LOCAL_C_SRCS = $(FIXTURE_C_SRC) $(TREADMILL_SRC)
+						-Iinclude/hardware -Iinclude -Imocks/hardware
+LOCAL_C_SRCS = $(TREADMILL_SRC)
 LOCAL_PDE_SRCS = src/main/arduino/main.pde
 include Arduino.mk
 

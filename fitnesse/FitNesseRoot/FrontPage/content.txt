@@ -21,3 +21,4 @@ TreadmillControlSuite
 
 
 CheatSuite
+SlimBridgeDemoSuite
