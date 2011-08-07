@@ -50,7 +50,7 @@ static char* setTime(void* void_self, SlimList *args) {
 static char* distance(void* void_self, SlimList *args) {
 	TreadmillDistance* self = (TreadmillDistance*)void_self;
   double d = Api_DistanceTravelled(self->api);
-	snprintf(self->result, 32, "%0.1f", d);
+	ftoa(self->result, d, 1);
 	return self->result;
 }
 SLIM_CREATE_FIXTURE(TreadmillDistance)

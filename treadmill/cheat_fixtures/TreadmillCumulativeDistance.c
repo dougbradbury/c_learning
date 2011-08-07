@@ -5,6 +5,7 @@
 #include "SlimList.h"
 #include "treadmill/Api.h"
 #include "FakeUptime.h"
+#include "format.h"
 
 typedef struct TreadmillCumulativeDistance
 {
@@ -52,7 +53,7 @@ static char* setTime(void* void_self, SlimList *args) {
 static char* distance(void* void_self, SlimList *args) {
 	TreadmillCumulativeDistance* self = (TreadmillCumulativeDistance*)void_self;
   double d = Api_DistanceTravelled(self->api);
-	snprintf(self->result, 32, "%0.1f", d);
+	ftoa(self->result, d, 1);
 	return self->result;
 }
 

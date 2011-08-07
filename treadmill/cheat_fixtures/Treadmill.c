@@ -4,6 +4,7 @@
 #include "Fixtures.h"
 #include "SlimList.h"
 #include "treadmill/Api.h"
+#include "format.h"
 
 typedef struct Treadmill
 {
@@ -44,7 +45,8 @@ static char* incrementSpeed(void* void_self, SlimList* args)
 static char* targetSpeed(void* void_self, SlimList* args)
 {
 	Treadmill* self = (Treadmill*)void_self;
-	snprintf(self->result, 32, "%.1f", Api_GetTargetSpeed(self->api));
+  double speed = Api_GetTargetSpeed(self->api);
+	ftoa(self->result, speed, 1);
 	return self->result;
 }
 
