@@ -5,6 +5,7 @@
 #include "SlimList.h"
 #include "treadmill/Api.h"
 #include "FakeUptime.h"
+#include "format.h"
 
 typedef struct TreadmillDistance
 {
